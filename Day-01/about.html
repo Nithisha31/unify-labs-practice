@@ -1,55 +1,34 @@
 
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive UI Project</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>About</title>
+<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-<header class="navbar">
-    <div class="logo">
-        <img src="assets/logo.svg" alt="Logo" width="40">
-        <span>MyProject</span>
-    </div>
-
-    <input type="checkbox" id="menu-toggle">
-    <label for="menu-toggle" class="hamburger">&#9776;</label>
-
-    <nav class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
-    </nav>
-
-    <div class="theme-switch">
-        <input type="checkbox" id="theme-toggle">
-        <label for="theme-toggle">🌙</label>
-    </div>
+<header>
+  <nav class="navbar">
+    <div class="logo">UnifyLabs</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="speakers.html">Speakers</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 </header>
 
-<section class="content">
-    <h1>Modern UI Components</h1>
 
-    <button class="btn neon-btn">Neon Glow</button>
-    <button class="btn rotate-border-btn">Rotating Border</button>
-    <button class="btn micro-btn">Hover Micro Animation</button>
+<section class="container">
+  <h1>About This Conference</h1>
+  <p>This project demonstrates modern CSS layout techniques.</p>
 </section>
 
-<script>
-// Dark/Light Mode Toggle
-const themeToggle = document.getElementById('theme-toggle');
-themeToggle.addEventListener('change', () => {
-    document.documentElement.setAttribute(
-        'data-theme',
-        themeToggle.checked ? 'dark' : 'light'
-    );
-});
-</script>
-
+<footer>
+  <p>© 2025 UnifyLabs</p>
+</footer>
 </body>
 </html>
