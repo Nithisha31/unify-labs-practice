@@ -1,36 +1,55 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-<meta charset="UTF-8">
-<title>Home</title>
-<link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive UI Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <nav class="navbar">
-    <div class="logo">UnifyLabs</div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="speakers.html">Speakers</a></li>
-      <li><a href="schedule.html">Schedule</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+<header class="navbar">
+    <div class="logo">
+        <img src="assets/logo.svg" alt="Logo" width="40">
+        <span>MyProject</span>
+    </div>
+
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger">&#9776;</label>
+
+    <nav class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="theme-switch">
+        <input type="checkbox" id="theme-toggle">
+        <label for="theme-toggle">🌙</label>
+    </div>
 </header>
 
+<section class="content">
+    <h1>Modern UI Components</h1>
 
-<section class="hero">
-  <div>
-    <h1>Tech Conference 2025</h1>
-    <p>Learn modern CSS layouts with Flexbox and Grid</p>
-  </div>
+    <button class="btn neon-btn">Neon Glow</button>
+    <button class="btn rotate-border-btn">Rotating Border</button>
+    <button class="btn micro-btn">Hover Micro Animation</button>
 </section>
 
-<footer>
-  <p>© 2025 UnifyLabs</p>
-</footer>
+<script>
+// Dark/Light Mode Toggle
+const themeToggle = document.getElementById('theme-toggle');
+themeToggle.addEventListener('change', () => {
+    document.documentElement.setAttribute(
+        'data-theme',
+        themeToggle.checked ? 'dark' : 'light'
+    );
+});
+</script>
+
 </body>
 </html>
