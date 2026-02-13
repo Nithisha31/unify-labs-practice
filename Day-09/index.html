@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Card Collection</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 class="title">Dashboard Card Collection</h1>
+
+<div class="card-grid">
+
+<!-- 3D Flip Card -->
+<div class="card flip-card">
+  <div class="flip-inner">
+    <div class="flip-front">
+      <img src="https://picsum.photos/400/300?1" alt="Front Image">
+      <h2>Analytics</h2>
+    </div>
+    <div class="flip-back">
+      <h2>Performance</h2>
+      <p>Revenue Growth: 85%</p>
+    </div>
+  </div>
+</div>
+
+<!-- Glassmorphism Card -->
+<div class="card glass-card">
+  <img class="zoom-img" src="https://picsum.photos/400/300?2" alt="Glass Image">
+  <h2>Team Progress</h2>
+  <p>Project Completion</p>
+  <div class="progress-bar">
+    <span style="width:70%"></span>
+  </div>
+</div>
+
+<!-- Animated Border Card -->
+<div class="card gradient-card">
+  <div class="gradient-inner">
+    <img src="https://picsum.photos/400/300?3" alt="Gradient Image">
+    <h2>Notifications</h2>
+    <p>5 New Updates</p>
+  </div>
+</div>
+
+</div>
+
+<!-- FAQ Accordion -->
+<section class="accordion-section">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="accordion">
+    <input type="radio" name="faq" id="faq1" checked>
+    <label for="faq1">What is Glassmorphism?</label>
+    <div class="content">
+      <p>Glassmorphism uses backdrop-filter blur and transparency for frosted glass effects.</p>
+    </div>
+
+    <input type="radio" name="faq" id="faq2">
+    <label for="faq2">How does 3D Flip work?</label>
+    <div class="content">
+      <p>It uses perspective, preserve-3d and rotateY transforms.</p>
+    </div>
+
+    <input type="radio" name="faq" id="faq3">
+    <label for="faq3">Is this layout responsive?</label>
+    <div class="content">
+      <p>Yes. CSS Grid auto-fit ensures proper reflow on all screen sizes.</p>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
