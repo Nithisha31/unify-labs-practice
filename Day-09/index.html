@@ -1,76 +1,82 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard Card Collection</title>
+<title>Neon Glass Auth UI</title>
 <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<h1 class="title">Dashboard Card Collection</h1>
+<section class="auth-section">
+  <div class="auth-container">
+    <h1>Create Account</h1>
+    <form class="auth-form" novalidate>
+      <div class="form-group">
+        <input type="text" required minlength="3" placeholder=" ">
+        <label>Username</label>
+      </div>
 
-<div class="card-grid">
+      <div class="form-group">
+        <input type="email" required placeholder=" ">
+        <label>Email</label>
+      </div>
 
-<!-- 3D Flip Card -->
-<div class="card flip-card">
-  <div class="flip-inner">
-    <div class="flip-front">
-      <img src="https://picsum.photos/400/300?1" alt="Front Image">
-      <h2>Analytics</h2>
-    </div>
-    <div class="flip-back">
-      <h2>Performance</h2>
-      <p>Revenue Growth: 85%</p>
-    </div>
-  </div>
-</div>
+      <div class="form-group">
+        <input type="password" required minlength="6" placeholder=" ">
+        <label>Password</label>
+      </div>
 
-<!-- Glassmorphism Card -->
-<div class="card glass-card">
-  <img class="zoom-img" src="https://picsum.photos/400/300?2" alt="Glass Image">
-  <h2>Team Progress</h2>
-  <p>Project Completion</p>
-  <div class="progress-bar">
-    <span style="width:70%"></span>
-  </div>
-</div>
-
-<!-- Animated Border Card -->
-<div class="card gradient-card">
-  <div class="gradient-inner">
-    <img src="https://picsum.photos/400/300?3" alt="Gradient Image">
-    <h2>Notifications</h2>
-    <p>5 New Updates</p>
-  </div>
-</div>
-
-</div>
-
-<!-- FAQ Accordion -->
-<section class="accordion-section">
-  <h2>Frequently Asked Questions</h2>
-
-  <div class="accordion">
-    <input type="radio" name="faq" id="faq1" checked>
-    <label for="faq1">What is Glassmorphism?</label>
-    <div class="content">
-      <p>Glassmorphism uses backdrop-filter blur and transparency for frosted glass effects.</p>
-    </div>
-
-    <input type="radio" name="faq" id="faq2">
-    <label for="faq2">How does 3D Flip work?</label>
-    <div class="content">
-      <p>It uses perspective, preserve-3d and rotateY transforms.</p>
-    </div>
-
-    <input type="radio" name="faq" id="faq3">
-    <label for="faq3">Is this layout responsive?</label>
-    <div class="content">
-      <p>Yes. CSS Grid auto-fit ensures proper reflow on all screen sizes.</p>
-    </div>
+      <button type="submit">Sign Up</button>
+    </form>
   </div>
 </section>
 
+<section class="team-section">
+  <h2>Meet Our Team</h2>
+  <div class="team-grid">
+
+    <div class="card">
+      <div class="card-img">
+        <img src="team1.jpg" alt="Team Member">
+        <div class="overlay">
+          <a href="#">Twitter</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+      <h3>Jane Doe</h3>
+      <p>UI Designer</p>
+    </div>
+
+    <div class="card">
+      <div class="card-img">
+        <img src="team2.jpg" alt="Team Member">
+        <div class="overlay">
+          <a href="#">Twitter</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+      <h3>John Smith</h3>
+      <p>Frontend Developer</p>
+    </div>
+
+    <div class="card">
+      <div class="card-img">
+        <img src="team3.jpg" alt="Team Member">
+        <div class="overlay">
+          <a href="#">Twitter</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+      <h3>Emily Clark</h3>
+      <p>Product Manager</p>
+    </div>
+
+  </div>
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
