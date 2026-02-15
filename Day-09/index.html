@@ -4,77 +4,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Neon Glass Auth UI</title>
+<title>Neon Glass Project</title>
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<section class="auth-section">
-  <div class="auth-container">
-    <h1>Create Account</h1>
-    <form class="auth-form" novalidate>
-      <div class="form-group">
-        <input type="text" required minlength="3" placeholder=" ">
-        <label>Username</label>
-      </div>
+<div class="particles"></div>
 
-      <div class="form-group">
-        <input type="email" required placeholder=" ">
-        <label>Email</label>
-      </div>
-
-      <div class="form-group">
-        <input type="password" required minlength="6" placeholder=" ">
-        <label>Password</label>
-      </div>
-
-      <button type="submit">Sign Up</button>
-    </form>
-  </div>
+<section class="hero">
+    <h1 class="neon flicker">NEON GLASS</h1>
+    <h2 class="typewriter">Launching Something Amazing Soon...</h2>
+    <button id="notifyBtn">Notify Me</button>
 </section>
 
-<section class="team-section">
-  <h2>Meet Our Team</h2>
-  <div class="team-grid">
-
-    <div class="card">
-      <div class="card-img">
-        <img src="team1.jpg" alt="Team Member">
-        <div class="overlay">
-          <a href="#">Twitter</a>
-          <a href="#">LinkedIn</a>
-        </div>
-      </div>
-      <h3>Jane Doe</h3>
-      <p>UI Designer</p>
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Get Notified!</h3>
+        <input type="email" placeholder="Enter your email">
+        <button>Submit</button>
     </div>
+</div>
 
-    <div class="card">
-      <div class="card-img">
-        <img src="team2.jpg" alt="Team Member">
-        <div class="overlay">
-          <a href="#">Twitter</a>
-          <a href="#">LinkedIn</a>
-        </div>
-      </div>
-      <h3>John Smith</h3>
-      <p>Frontend Developer</p>
+<section class="gallery">
+    <div class="masonry">
+        <img src="https://picsum.photos/300/400?1">
+        <img src="https://picsum.photos/300/500?2">
+        <img src="https://picsum.photos/300/350?3">
+        <img src="https://picsum.photos/300/450?4">
+        <img src="https://picsum.photos/300/380?5">
     </div>
-
-    <div class="card">
-      <div class="card-img">
-        <img src="team3.jpg" alt="Team Member">
-        <div class="overlay">
-          <a href="#">Twitter</a>
-          <a href="#">LinkedIn</a>
-        </div>
-      </div>
-      <h3>Emily Clark</h3>
-      <p>Product Manager</p>
-    </div>
-
-  </div>
 </section>
 
 <script src="script.js"></script>
