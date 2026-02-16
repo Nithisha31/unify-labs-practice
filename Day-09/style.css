@@ -1,4 +1,77 @@
 
+/* ================= ROOT VARIABLES ================= */
+:root {
+    --primary-color: #00f5ff;
+    --secondary-color: #ff00c8;
+    --background-color: #0f0f1a;
+    --text-color: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --blur-effect: blur(15px);
+    --transition-speed: 0.3s ease;
+}
+
+/* ================= GLOBAL RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================= BODY ================= */
+body {
+    background: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+}
+
+/* ================= GLASS CARD ================= */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--blur-effect);
+    -webkit-backdrop-filter: var(--blur-effect);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: transform var(--transition-speed), opacity var(--transition-speed);
+}
+
+.glass-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    opacity: 0.95;
+}
+
+/* ================= GRID LAYOUT ================= */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* ================= FLEX NAVIGATION ================= */
+.flex-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ================= STICKY HEADER ================= */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+}
+
+/* ================= PERFORMANCE ================= */
+.animate {
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+
+
 body {
     margin:0;
     font-family: Arial, sans-serif;
