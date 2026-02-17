@@ -1,14 +1,29 @@
 
-const particlesContainer = document.querySelector('.particles');
+// Practice variable declaration using let and const
 
-for(let i=0;i<20;i++){
-    const span=document.createElement('span');
-    span.style.left=Math.random()*100+'vw';
-    span.style.animationDuration=(5+Math.random()*5)+'s';
-    particlesContainer.appendChild(span);
-}
+// Two number variables
+let num1 = 15;
+let num2 = 4;
 
-const modal=document.getElementById('modal');
-document.getElementById('notifyBtn').onclick=()=> modal.style.display='block';
-document.querySelector('.close').onclick=()=> modal.style.display='none';
-window.onclick=(e)=>{ if(e.target==modal) modal.style.display='none'; }
+// Arithmetic operations
+let sum = num1 + num2;
+let product = num1 * num2;
+let remainder = num1 % num2;
+
+// Logging results
+console.log("First Number:", num1);
+console.log("Second Number:", num2);
+console.log("Sum:", sum);
+console.log("Product:", product);
+console.log("Remainder:", remainder);
+
+// typeof debugging
+console.log("Type of num1:", typeof num1);
+console.log("Type of sum:", typeof sum);
+
+// User name variable and string concatenation
+const userName = "LinkedIn Learner";
+let welcomeMessage = "Welcome to JavaScript practice, " + userName + "!";
+
+console.log(welcomeMessage);
+console.log("Type of userName:", typeof userName);
