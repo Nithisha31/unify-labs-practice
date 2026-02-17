@@ -2,40 +2,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Neon Glass Project</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Variables & Math Project</title>
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f2027;
+            color: white;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .card {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            width: 60%;
+            margin: auto;
+            box-shadow: 0 0 20px cyan;
+        }
+        h1 { color: cyan; }
+    </style>
 </head>
 <body>
-
-<div class="particles"></div>
-
-<section class="hero">
-    <h1 class="neon flicker">NEON GLASS</h1>
-    <h2 class="typewriter">Launching Something Amazing Soon...</h2>
-    <button id="notifyBtn">Notify Me</button>
-</section>
-
-<div id="modal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h3>Get Notified!</h3>
-        <input type="email" placeholder="Enter your email">
-        <button>Submit</button>
+    <div class="card">
+        <h1>JavaScript Variables & Math Practice</h1>
+        <p>Open the browser console (F12) to view results.</p>
     </div>
-</div>
-
-<section class="gallery">
-    <div class="masonry">
-        <img src="https://picsum.photos/300/400?1">
-        <img src="https://picsum.photos/300/500?2">
-        <img src="https://picsum.photos/300/350?3">
-        <img src="https://picsum.photos/300/450?4">
-        <img src="https://picsum.photos/300/380?5">
-    </div>
-</section>
-
-<script src="script.js"></script>
 </body>
 </html>
