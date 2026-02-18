@@ -1,29 +1,40 @@
 
-// Practice variable declaration using let and const
+// Fixed correct number as 76
+let randomNumber = 76;
 
-// Two number variables
-let num1 = 15;
-let num2 = 4;
+// Limit number of attempts
+let maxAttempts = 7;
+let currentAttempts = 0;
 
-// Arithmetic operations
-let sum = num1 + num2;
-let product = num1 * num2;
-let remainder = num1 % num2;
+// Function to check user's guess
+function checkGuess() {
+    // Convert input from String to Number
+    let userGuess = Number(document.getElementById("guessInput").value);
+    let message = document.getElementById("message");
+    let attempts = document.getElementById("attempts");
 
-// Logging results
-console.log("First Number:", num1);
-console.log("Second Number:", num2);
-console.log("Sum:", sum);
-console.log("Product:", product);
-console.log("Remainder:", remainder);
+    // Increase attempt count
+    currentAttempts++;
 
-// typeof debugging
-console.log("Type of num1:", typeof num1);
-console.log("Type of sum:", typeof sum);
+    // If attempts exceed limit
+    if (currentAttempts > maxAttempts) {
+        message.textContent = "❌ Game Over! The correct number was " + randomNumber;
+        return;
+    }
 
-// User name variable and string concatenation
-const userName = "LinkedIn Learner";
-let welcomeMessage = "Welcome to JavaScript practice, " + userName + "!";
+    // If/Else logic for checking
+    if (userGuess === randomNumber) {
+        message.textContent = "🎉 Correct! You guessed the number!";
+    } 
+    else if (userGuess > randomNumber) {
+        message.textContent = "📉 Too High! Try Again.";
+    } 
+    else if (userGuess < randomNumber) {
+        message.textContent = "📈 Too Low! Try Again.";
+    } 
+    else {
+        message.textContent = "⚠ Please enter a valid number!";
+    }
 
-console.log(welcomeMessage);
-console.log("Type of userName:", typeof userName);
+    attempts.textContent = "Attempts: " + currentAttempts + " / " + maxAttempts;
+}
