@@ -3,31 +3,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Variables & Math Project</title>
-    <script defer src="script.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #0f2027;
-            color: white;
-            text-align: center;
-            padding-top: 50px;
-        }
-        .card {
-            background: rgba(255,255,255,0.1);
-            padding: 30px;
-            border-radius: 15px;
-            width: 60%;
-            margin: auto;
-            box-shadow: 0 0 20px cyan;
-        }
-        h1 { color: cyan; }
-    </style>
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="card">
-        <h1>JavaScript Variables & Math Practice</h1>
-        <p>Open the browser console (F12) to view results.</p>
+
+    <h1>🎯 Number Guessing Game</h1>
+    <p>Guess a number between <strong>1 and 100</strong></p>
+
+    <div class="game-container">
+        <input type="text" id="guessInput" placeholder="Enter your guess">
+        <button onclick="checkGuess()">Submit Guess</button>
+        <p id="message"></p>
+        <p id="attempts"></p>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
