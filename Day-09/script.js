@@ -1,40 +1,47 @@
 
-// Fixed correct number as 76
-let randomNumber = 76;
+// 1. Function to trim and convert string to Title Case
+const toTitleCase = (str) => {
+  return str
+    .trim()
+    .toLowerCase()
+    .split(" ")
+    .filter(word => word.length > 0)
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+};
 
-// Limit number of attempts
-let maxAttempts = 7;
-let currentAttempts = 0;
+// 2. Function to count vowels in a string
+const countVowels = (str) => {
+  const vowels = "aeiou";
+  return str
+    .toLowerCase()
+    .split("")
+    .filter(char => vowels.includes(char)).length;
+};
 
-// Function to check user's guess
-function checkGuess() {
-    // Convert input from String to Number
-    let userGuess = Number(document.getElementById("guessInput").value);
-    let message = document.getElementById("message");
-    let attempts = document.getElementById("attempts");
+// 3. Secret Message generator (replaces specific words with '***')
+const secretMessage = (str, wordsToHide) => {
+  let cleanedStr = str.trim();
+  wordsToHide.forEach(word => {
+    const regex = new RegExp(`\\b${word.trim()}\\b`, "gi");
+    cleanedStr = cleanedStr.replace(regex, "***");
+  });
+  return cleanedStr;
+};
 
-    // Increase attempt count
-    currentAttempts++;
+// Handlers
+const handleTitleCase = () => {
+    const input = document.getElementById("inputText").value;
+    document.getElementById("output").innerText = toTitleCase(input);
+};
 
-    // If attempts exceed limit
-    if (currentAttempts > maxAttempts) {
-        message.textContent = "❌ Game Over! The correct number was " + randomNumber;
-        return;
-    }
+const handleVowelCount = () => {
+    const input = document.getElementById("inputText").value;
+    document.getElementById("output").innerText = "Vowel Count: " + countVowels(input);
+};
 
-    // If/Else logic for checking
-    if (userGuess === randomNumber) {
-        message.textContent = "🎉 Correct! You guessed the number!";
-    } 
-    else if (userGuess > randomNumber) {
-        message.textContent = "📉 Too High! Try Again.";
-    } 
-    else if (userGuess < randomNumber) {
-        message.textContent = "📈 Too Low! Try Again.";
-    } 
-    else {
-        message.textContent = "⚠ Please enter a valid number!";
-    }
-
-    attempts.textContent = "Attempts: " + currentAttempts + " / " + maxAttempts;
-}
+const handleSecretMessage = () => {
+    const input = document.getElementById("inputText").value;
+    const words = document.getElementById("secretWords").value.split(",");
+    document.getElementById("output").innerText = secretMessage(input, words);
+};
