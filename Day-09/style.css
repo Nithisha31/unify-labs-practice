@@ -1,189 +1,50 @@
 
-/* ================= ROOT VARIABLES ================= */
-:root {
-    --primary-color: #00f5ff;
-    --secondary-color: #ff00c8;
-    --background-color: #0f0f1a;
-    --text-color: #ffffff;
-    --glass-bg: rgba(255, 255, 255, 0.1);
-    --glass-border: rgba(255, 255, 255, 0.2);
-    --blur-effect: blur(15px);
-    --transition-speed: 0.3s ease;
-}
-
-/* ================= GLOBAL RESET ================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* ================= BODY ================= */
 body {
-    background: var(--background-color);
-    color: var(--text-color);
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-/* ================= GLASS CARD ================= */
-.glass-card {
-    background: var(--glass-bg);
-    backdrop-filter: var(--blur-effect);
-    -webkit-backdrop-filter: var(--blur-effect);
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    padding: 2rem;
-    transition: transform var(--transition-speed), opacity var(--transition-speed);
+.container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.glass-card:hover {
-    transform: translateY(-5px) scale(1.02);
-    opacity: 0.95;
+h1 {
+    text-align: center;
 }
 
-/* ================= GRID LAYOUT ================= */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
+textarea {
+    width: 100%;
+    height: 80px;
+    margin-bottom: 10px;
+    padding: 8px;
 }
 
-/* ================= FLEX NAVIGATION ================= */
-.flex-nav {
+.buttons {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-}
-
-/* ================= STICKY HEADER ================= */
-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(10px);
-}
-
-/* ================= PERFORMANCE ================= */
-.animate {
-    transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-
-
-body {
-    margin:0;
-    font-family: Arial, sans-serif;
-    background:#000;
-    color:#fff;
-    overflow-x:hidden;
-}
-
-.particles span {
-    position:absolute;
-    width:5px;
-    height:5px;
-    background:#0ff;
-    border-radius:50%;
-    animation: move 10s linear infinite;
-}
-
-@keyframes move {
-    from { transform: translateY(100vh); }
-    to { transform: translateY(-10vh); }
-}
-
-.hero {
-    text-align:center;
-    padding:150px 20px;
-    position:relative;
-    z-index:2;
-}
-
-.neon {
-    font-size:60px;
-    color:#0ff;
-    text-shadow:0 0 5px #0ff,0 0 10px #0ff,0 0 20px #0ff;
-}
-
-.flicker {
-    animation: flicker 1.5s infinite alternate steps(2);
-}
-
-@keyframes flicker {
-    0% { opacity:1; }
-    50% { opacity:0.4; }
-    100% { opacity:1; }
-}
-
-.typewriter {
-    overflow:hidden;
-    border-right:.15em solid #0ff;
-    white-space:nowrap;
-    animation: typing 4s steps(40,end), blink .75s step-end infinite;
-}
-
-@keyframes typing {
-    from { width:0 }
-    to { width:100% }
-}
-
-@keyframes blink {
-    from, to { border-color:transparent }
-    50% { border-color:#0ff }
+    margin-bottom: 10px;
 }
 
 button {
-    padding:10px 20px;
-    margin-top:20px;
-    background:#0ff;
-    border:none;
-    cursor:pointer;
+    padding: 8px;
+    cursor: pointer;
 }
 
-.modal {
-    display:none;
-    position:fixed;
-    z-index:10;
-    left:0; top:0;
-    width:100%; height:100%;
-    background:rgba(0,0,0,0.8);
+#secretWords {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
 }
 
-.modal-content {
-    background:#111;
-    margin:15% auto;
-    padding:20px;
-    width:300px;
-    text-align:center;
-}
-
-.close {
-    float:right;
-    cursor:pointer;
-}
-
-.gallery {
-    padding:50px;
-}
-
-.masonry {
-    column-count:3;
-    column-gap:15px;
-}
-
-.masonry img {
-    width:100%;
-    margin-bottom:15px;
-    filter:grayscale(100%);
-    transition:filter 0.5s;
-}
-
-.masonry img:hover {
-    filter:grayscale(0%);
-}
-
-@media(max-width:768px){
-    .masonry { column-count:1; }
+#output {
+    margin-top: 10px;
+    font-weight: bold;
 }
