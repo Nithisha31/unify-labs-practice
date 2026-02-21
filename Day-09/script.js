@@ -1,47 +1,52 @@
 
-// 1. Function to trim and convert string to Title Case
-const toTitleCase = (str) => {
-  return str
-    .trim()
-    .toLowerCase()
-    .split(" ")
-    .filter(word => word.length > 0)
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
-};
+// ===============================
+// Functional Utilities Project
+// ===============================
 
-// 2. Function to count vowels in a string
-const countVowels = (str) => {
-  const vowels = "aeiou";
-  return str
-    .toLowerCase()
-    .split("")
-    .filter(char => vowels.includes(char)).length;
-};
+// Sample Task Data
+const tasks = [
+    { id: 1, title: "Design Landing Page", status: "Completed" },
+    { id: 2, title: "Fix Login Bug", status: "Pending" },
+    { id: 3, title: "Update Database", status: "Completed" },
+    { id: 4, title: "Deploy to Server", status: "Pending" }
+];
 
-// 3. Secret Message generator (replaces specific words with '***')
-const secretMessage = (str, wordsToHide) => {
-  let cleanedStr = str.trim();
-  wordsToHide.forEach(word => {
-    const regex = new RegExp(`\\b${word.trim()}\\b`, "gi");
-    cleanedStr = cleanedStr.replace(regex, "***");
-  });
-  return cleanedStr;
-};
+// 1️⃣ Filter Tasks into Completed and Pending
+const completedTasks = tasks.filter(task => task.status === "Completed");
+const pendingTasks = tasks.filter(task => task.status === "Pending");
 
-// Handlers
-const handleTitleCase = () => {
-    const input = document.getElementById("inputText").value;
-    document.getElementById("output").innerText = toTitleCase(input);
-};
+console.log("Completed Tasks:", completedTasks);
+console.log("Pending Tasks:", pendingTasks);
 
-const handleVowelCount = () => {
-    const input = document.getElementById("inputText").value;
-    document.getElementById("output").innerText = "Vowel Count: " + countVowels(input);
-};
 
-const handleSecretMessage = () => {
-    const input = document.getElementById("inputText").value;
-    const words = document.getElementById("secretWords").value.split(",");
-    document.getElementById("output").innerText = secretMessage(input, words);
-};
+// ===============================
+// Price Mapping with Tax
+// ===============================
+
+const prices = [100, 250, 400, 150];
+const taxRate = 0.10; // 10% tax
+
+// 2️⃣ Map Prices with Tax Added
+const pricesWithTax = prices.map(price => price + (price * taxRate));
+
+console.log("Prices with Tax:", pricesWithTax);
+
+
+// ===============================
+// Company Expense Reduction
+// ===============================
+
+const expenses = [1200, 5000, 2300, 1500, 3200];
+
+// 3️⃣ Reduce Expenses into Total Budget
+const totalBudget = expenses.reduce((total, amount) => total + amount, 0);
+
+console.log("Total Company Budget:", totalBudget);
+
+
+// Display Results on Page
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("completedCount").textContent = completedTasks.length;
+    document.getElementById("pendingCount").textContent = pendingTasks.length;
+    document.getElementById("totalBudget").textContent = "$" + totalBudget;
+});
