@@ -1,52 +1,70 @@
 
-// ===============================
-// Functional Utilities Project
-// ===============================
+// ES6 Pet Class Implementation
 
-// Sample Task Data
-const tasks = [
-    { id: 1, title: "Design Landing Page", status: "Completed" },
-    { id: 2, title: "Fix Login Bug", status: "Pending" },
-    { id: 3, title: "Update Database", status: "Completed" },
-    { id: 4, title: "Deploy to Server", status: "Pending" }
-];
+class Pet {
+    constructor(name, type, health = 100) {
+        this.name = name;
+        this.type = type;
+        this._health = health;
+    }
 
-// 1️⃣ Filter Tasks into Completed and Pending
-const completedTasks = tasks.filter(task => task.status === "Completed");
-const pendingTasks = tasks.filter(task => task.status === "Pending");
+    // Getter for health
+    get health() {
+        return this._health;
+    }
 
-console.log("Completed Tasks:", completedTasks);
-console.log("Pending Tasks:", pendingTasks);
+    // Setter for health (ensures value stays between 0 and 100)
+    set health(value) {
+        if (value > 100) {
+            this._health = 100;
+        } else if (value < 0) {
+            this._health = 0;
+        } else {
+            this._health = value;
+        }
+    }
 
+    // Feed method increases health
+    feed() {
+        this.health += 10;
+    }
 
-// ===============================
-// Price Mapping with Tax
-// ===============================
+    // Play method decreases health slightly
+    play() {
+        this.health -= 15;
+    }
 
-const prices = [100, 250, 400, 150];
-const taxRate = 0.10; // 10% tax
+    // Get Status method
+    getStatus() {
+        if (this.health > 70) {
+            return "😊 Your pet is happy and healthy!";
+        } else if (this.health > 30) {
+            return "😐 Your pet is okay, but needs attention.";
+        } else {
+            return "⚠️ Your pet is not feeling well!";
+        }
+    }
+}
 
-// 2️⃣ Map Prices with Tax Added
-const pricesWithTax = prices.map(price => price + (price * taxRate));
+// Create Pet Object
+const myPet = new Pet("Buddy", "Dog", 80);
 
-console.log("Prices with Tax:", pricesWithTax);
+// Display Initial Values
+document.getElementById("petName").innerText = myPet.name;
+document.getElementById("petType").innerText = myPet.type;
+document.getElementById("petHealth").innerText = myPet.health;
 
+// Button Functions
+function feedPet() {
+    myPet.feed();
+    document.getElementById("petHealth").innerText = myPet.health;
+}
 
-// ===============================
-// Company Expense Reduction
-// ===============================
+function playWithPet() {
+    myPet.play();
+    document.getElementById("petHealth").innerText = myPet.health;
+}
 
-const expenses = [1200, 5000, 2300, 1500, 3200];
-
-// 3️⃣ Reduce Expenses into Total Budget
-const totalBudget = expenses.reduce((total, amount) => total + amount, 0);
-
-console.log("Total Company Budget:", totalBudget);
-
-
-// Display Results on Page
-document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("completedCount").textContent = completedTasks.length;
-    document.getElementById("pendingCount").textContent = pendingTasks.length;
-    document.getElementById("totalBudget").textContent = "$" + totalBudget;
-});
+function showStatus() {
+    alert(myPet.getStatus());
+}
