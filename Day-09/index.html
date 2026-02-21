@@ -2,24 +2,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Functional Utilities Project</title>
+    <title>Virtual Pet Management System</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Functional Programming Utilities</h1>
+    <h1>Virtual Pet Management System (ES6 Class Implementation)</h1>
 
     <div class="section">
-        <h2>Task Status Overview</h2>
-        <img src="images/tasks.png" alt="Task Image" width="400">
-        <p>Completed Tasks: <span id="completedCount"></span></p>
-        <p>Pending Tasks: <span id="pendingCount"></span></p>
-    </div>
+        <h2>Meet Your Pet</h2>
+        <img src="images/pet.png" alt="Pet Image" width="300">
+        <p><strong>Name:</strong> <span id="petName"></span></p>
+        <p><strong>Type:</strong> <span id="petType"></span></p>
+        <p><strong>Health:</strong> <span id="petHealth"></span></p>
 
-    <div class="section">
-        <h2>Company Budget Summary</h2>
-        <img src="images/budget.png" alt="Budget Image" width="400">
-        <p>Total Budget: <span id="totalBudget"></span></p>
+        <button onclick="feedPet()">Feed</button>
+        <button onclick="playWithPet()">Play</button>
+        <button onclick="showStatus()">Get Status</button>
     </div>
 
     <script src="functional_utilities.js"></script>
