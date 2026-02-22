@@ -1,25 +1,28 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Virtual Pet Management System</title>
+    <meta charset="UTF-8">
+    <title>Virtual Pet + Task Manager</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Virtual Pet Management System (ES6 Class Implementation)</h1>
+    <h1>Virtual Pet ES6 Project</h1>
 
-    <div class="section">
-        <h2>Meet Your Pet</h2>
-        <img src="images/pet.png" alt="Pet Image" width="300">
-        <p><strong>Name:</strong> <span id="petName"></span></p>
-        <p><strong>Type:</strong> <span id="petType"></span></p>
-        <p><strong>Health:</strong> <span id="petHealth"></span></p>
+    <!-- Existing App Container -->
+    <div id="app"></div>
 
-        <button onclick="feedPet()">Feed</button>
-        <button onclick="playWithPet()">Play</button>
-        <button onclick="showStatus()">Get Status</button>
-    </div>
+    <hr>
+
+    <!-- ✅ New Task Manager Section -->
+    <section id="task-section">
+        <h2>Task Manager</h2>
+        <input type="text" id="taskInput" placeholder="Enter a new task">
+        <button id="addTaskBtn">Add Task</button>
+
+        <ul id="taskList"></ul>
+    </section>
 
     <script src="functional_utilities.js"></script>
 </body>
