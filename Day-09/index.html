@@ -1,23 +1,23 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Telangana Weather Dashboard</title>
+    <title>Settings Module with Persistence</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1 class="title">🌦 Telangana Live Weather Report</h1>
-
     <div class="container">
-        <div class="weather-card" id="hyderabad"></div>
-        <div class="weather-card" id="warangal"></div>
-        <div class="weather-card" id="bhupalpally"></div>
+        <h1>⚙️ Application Settings</h1>
+
+        <div class="settings-card">
+            <label class="toggle-label">
+                <input type="checkbox" id="themeToggle">
+                <span>Enable Dark Mode</span>
+            </label>
+        </div>
     </div>
 
-    <div id="spinner" class="spinner">Fetching Weather Reports...</div>
-
-    <script src="script.js"></script>
+    <script type="module" src="main.js"></script>
 </body>
 </html>
