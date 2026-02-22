@@ -1,52 +1,37 @@
-
 body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #141E30, #243B55);
-    color: white;
-    text-align: center;
-}
-
-.title {
-    padding: 25px;
-    font-size: 34px;
-    letter-spacing: 1px;
+    font-family: Arial, sans-serif;
+    transition: background 0.4s ease, color 0.4s ease;
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    padding: 20px;
+    text-align: center;
+    margin-top: 100px;
 }
 
-.weather-card {
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(12px);
-    border-radius: 18px;
-    padding: 25px;
-    width: 260px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-    transition: all 0.4s ease;
+.settings-card {
+    display: inline-block;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    background: #ffffff;
 }
 
-.weather-card:hover {
-    transform: translateY(-10px) scale(1.05);
-}
-
-.weather-card h2 {
-    margin-bottom: 15px;
-    font-size: 22px;
-}
-
-.weather-card p {
-    margin: 8px 0;
-    font-size: 16px;
-}
-
-.spinner {
-    margin: 20px;
+.toggle-label {
     font-size: 18px;
-    display: none;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .settings-card {
+    background: #1f1f1f;
 }
