@@ -1,50 +1,52 @@
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-}
-
-#task-section {
-    margin-top: 20px;
-}
-
-#taskInput {
-    padding: 8px;
-    width: 250px;
-}
-
-#addTaskBtn {
-    padding: 8px 12px;
-    margin-left: 5px;
-    cursor: pointer;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 15px;
-}
-
-li {
-    padding: 10px;
-    background-color: #f4f4f4;
-    margin-bottom: 8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 4px;
-}
-
-.completed {
-    text-decoration: line-through;
-    background-color: #d3ffd3;
-}
-
-.delete-btn {
-    background-color: red;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #141E30, #243B55);
     color: white;
-    border: none;
-    padding: 5px 8px;
-    cursor: pointer;
-    border-radius: 4px;
+    text-align: center;
+}
+
+.title {
+    padding: 25px;
+    font-size: 34px;
+    letter-spacing: 1px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.weather-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    padding: 25px;
+    width: 260px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    transition: all 0.4s ease;
+}
+
+.weather-card:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+.weather-card h2 {
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.weather-card p {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+.spinner {
+    margin: 20px;
+    font-size: 18px;
+    display: none;
 }
