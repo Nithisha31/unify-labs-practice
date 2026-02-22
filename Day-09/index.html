@@ -3,27 +3,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Virtual Pet + Task Manager</title>
+    <title>Telangana Weather Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Virtual Pet ES6 Project</h1>
+    <h1 class="title">🌦 Telangana Live Weather Report</h1>
 
-    <!-- Existing App Container -->
-    <div id="app"></div>
+    <div class="container">
+        <div class="weather-card" id="hyderabad"></div>
+        <div class="weather-card" id="warangal"></div>
+        <div class="weather-card" id="bhupalpally"></div>
+    </div>
 
-    <hr>
+    <div id="spinner" class="spinner">Fetching Weather Reports...</div>
 
-    <!-- ✅ New Task Manager Section -->
-    <section id="task-section">
-        <h2>Task Manager</h2>
-        <input type="text" id="taskInput" placeholder="Enter a new task">
-        <button id="addTaskBtn">Add Task</button>
-
-        <ul id="taskList"></ul>
-    </section>
-
-    <script src="functional_utilities.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
