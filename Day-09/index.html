@@ -1,27 +1,71 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Classy Crypto Dashboard</title>
-<link rel="stylesheet" href="style.css">
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta charset="UTF-8">
+    <title>Shop Manager: Inventory Control</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>💎 Classy Crypto Dashboard</h1>
+<div class="container">
 
-<div class="top-bar">
-<label>
-  Dark Mode <input type="checkbox" id="theme-toggle">
-</label>
+    <h1>Shop Manager: Inventory Control</h1>
+    <img src="inventory.png" alt="Inventory">
+
+    <section>
+        <h2>Learning Objectives</h2>
+        <ul>
+            <li>Use $inc to update stock levels for all products</li>
+            <li>Update category names using $set and updateMany()</li>
+            <li>Use $push to add 'new-arrival' tag</li>
+            <li>Use deleteMany() to remove zero stock items</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Mass Update Operations</h2>
+<pre>
+// Increase price of all Electronics by +10
+db.products.updateMany(
+  { category: "Electronics" },
+  { $inc: { price: 10 } }
+)
+
+// Set featured: true for items priced > 500
+db.products.updateMany(
+  { price: { $gt: 500 } },
+  { $set: { featured: true } }
+)
+
+// Update category name example
+db.products.updateMany(
+  { category: "Clothing" },
+  { $set: { category: "Apparel" } }
+)
+
+// Add 'new-arrival' tag to Furniture
+db.products.updateMany(
+  { category: "Furniture" },
+  { $push: { tags: "new-arrival" } }
+)
+</pre>
+        <img src="mass_update.png" alt="Mass Update">
+    </section>
+
+    <section>
+        <h2>Cleanup & Verification</h2>
+<pre>
+// Delete products with zero stock
+db.products.deleteMany({ stock: 0 })
+
+// Verify remaining documents
+db.products.countDocuments()
+</pre>
+        <img src="cleanup.png" alt="Cleanup">
+    </section>
+
 </div>
 
-<canvas id="stackedChart" height="400"></canvas>
-
-<div id="coin-container" class="grid"></div>
-
-<script type="module" src="./js/App.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
