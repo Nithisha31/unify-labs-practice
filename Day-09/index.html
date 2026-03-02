@@ -1,45 +1,75 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calm Blog Space</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TITAN Shopping</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>🌿 Calm Blog Space</h1>
-    <button id="toggleTheme">🌙</button>
-  </header>
 
-  <main>
-    <!-- Post Editor -->
-    <section class="editor">
-      <h2>Create New Post</h2>
-      <input type="text" id="title" placeholder="Enter Title" required>
-      <input type="text" id="category" placeholder="Enter Category" required>
-      <textarea id="content" placeholder="Write your content..." required></textarea>
-      <div class="actions">
-        <button id="publishBtn">Publish Post</button>
-        <button id="draftBtn">Save as Draft</button>
-      </div>
-    </section>
+<header>
+<h1>TITAN Shopping</h1>
+<input type="text" id="search" placeholder="Search products..." onkeyup="searchProducts()">
+</header>
 
-    <!-- Published Posts -->
-    <section>
-      <h2>Published Posts</h2>
-      <div id="published-posts" class="grid"></div>
-    </section>
+<section class="categories">
+<button onclick="filterCategory('all')">All</button>
+<button onclick="filterCategory('electronics')">Electronics</button>
+<button onclick="filterCategory('decor')">Home Decor</button>
+<button onclick="filterCategory('men')">Men</button>
+<button onclick="filterCategory('women')">Women</button>
+<button onclick="filterCategory('kids')">Kids</button>
+</section>
 
-    <!-- Drafts -->
-    <section>
-      <h2>Drafts</h2>
-      <div id="draft-posts" class="grid"></div>
-    </section>
-  </main>
+<section id="products" class="products">
 
-  <script src="script.js"></script>
+<div class="card electronics">
+<img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8">
+<h3>Laptop</h3>
+<p>$1200</p>
+</div>
+
+<div class="card electronics">
+<img src="https://images.unsplash.com/photo-1518441902117-9f8e4b1b5a5a">
+<h3>Headphones</h3>
+<p>$199</p>
+</div>
+
+<div class="card decor">
+<img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
+<h3>Modern Sofa</h3>
+<p>$850</p>
+</div>
+
+<div class="card decor">
+<img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9">
+<h3>Wall Decor</h3>
+<p>$120</p>
+</div>
+
+<div class="card men">
+<img src="https://images.unsplash.com/photo-1520975922071-7b4e3c2c0e59">
+<h3>Men Jacket</h3>
+<p>$99</p>
+</div>
+
+<div class="card women">
+<img src="https://images.unsplash.com/photo-1520974735194-5f37d06a9f3f">
+<h3>Women Dress</h3>
+<p>$89</p>
+</div>
+
+<div class="card kids">
+<img src="https://images.unsplash.com/photo-1519455953755-af066f52f1ea">
+<h3>Kids T-shirt</h3>
+<p>$29</p>
+</div>
+
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
 
